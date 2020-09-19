@@ -1,31 +1,24 @@
 <?php
 
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\CarTypeController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\DriverController;
-use App\Http\Controllers\FaqController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SettingController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::middleware(['auth:sanctum'])->prefix('admin')->group( function () {
-    Route::get('dashboard',function (){
+    Route::get('/',function (){
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('settings', SettingController::class, ['as'=>'admin']);
-    Route::resource('faqs', FaqController::class, ['as'=>'admin']);
-    Route::resource('carTypes', CarTypeController::class, ['as'=>'admin']);
-    Route::resource('images', ImageController::class, ['as'=>'admin']);
-    Route::resource('cars', CarController::class, ['as'=>'admin']);
-    Route::resource('locations', LocationController::class, ['as'=>'admin']);
-    Route::resource('drivers', DriverController::class, ['as'=>'admin']);
-    Route::resource('customers', CustomerController::class, ['as'=>'admin']);
-    Route::resource('bookings', BookingController::class, ['as'=>'admin']);
+    Route::resource('settings', \App\Http\Controllers\SettingController::class, ['as'=>'admin']);
+    Route::resource('faqs', \App\Http\Controllers\FaqController::class, ['as'=>'admin']);
+    Route::resource('carTypes', \App\Http\Controllers\CarTypeController::class, ['as'=>'admin']);
+    Route::resource('images', \App\Http\Controllers\ImageController::class, ['as'=>'admin']);
+    Route::resource('cars', \App\Http\Controllers\CarController::class, ['as'=>'admin']);
+    Route::resource('locations', \App\Http\Controllers\LocationController::class, ['as'=>'admin']);
+    Route::resource('drivers', \App\Http\Controllers\DriverController::class, ['as'=>'admin']);
+    Route::resource('customers', \App\Http\Controllers\CustomerController::class, ['as'=>'admin']);
+    Route::resource('users', \App\Http\Controllers\UserController::class, ['as'=>'admin']);
+    Route::resource('currencies', \App\Http\Controllers\CurrencyController::class, ['as'=>'admin']);
+    Route::resource('bookings', \App\Http\Controllers\BookingController::class, ['as'=>'admin']);
 });

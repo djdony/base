@@ -2,10 +2,10 @@
     <table class="table table-striped" id="bookings-table">
         <thead>
             <tr>
+                <th>@lang('models/bookings.fields.customer')</th>
                 <th>@lang('models/bookings.fields.from')</th>
         <th>@lang('models/bookings.fields.to')</th>
         <th>@lang('models/bookings.fields.date')</th>
-        <th>@lang('models/bookings.fields.time')</th>
         <th>@lang('models/bookings.fields.flight')</th>
         <th>@lang('models/bookings.fields.type')</th>
         <th>@lang('models/bookings.fields.customer_id')</th>
@@ -16,14 +16,15 @@
         <tbody>
         @foreach($data as $booking)
             <tr>
-                <td>{{ $booking->from }}</td>
-            <td>{{ $booking->to }}</td>
-            <td>{{ $booking->date }}</td>
-            <td>{{ $booking->time }}</td>
-            <td>{{ $booking->flight }}</td>
-            <td>{{ $booking->type }}</td>
-            <td>{{ $booking->customer_id }}</td>
-            <td>{{ $booking->info }}</td>
+                <td>{{ $booking->customer->name ?? ''}}</td>
+                <td>{{ $booking->from->name ?? '' }}</td>
+            <td>{{ $booking->to->name ?? '' }}</td>
+            <td>{{ $booking->date ?? '' }}</td>
+            <td>{{ $booking->flight ?? '' }}</td>
+            <td>{{ $booking->type ?? '' }}</td>
+            <td>{{ $booking->price ?? '' }}</td>
+            <td>{{ $booking->currency->name ?? '' }}</td>
+            <td>{{ $booking->info ?? '' }}</td>
                 <td>
                     {!! Form::open(['route' => ['admin.bookings.destroy', $booking->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

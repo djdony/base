@@ -21,7 +21,9 @@ class Location extends Model
         'code',
         'lat',
         'lon',
-        'parent_id'
+        'parent_id',
+        '_lft',
+        '_rgt'
     ];
 
     const COUNTRY = 1;

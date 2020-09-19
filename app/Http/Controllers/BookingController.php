@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateBookingRequest;
+use App\Http\Requests\BookingRequest;
 use App\Models\Booking;
 
 class BookingController extends BaseController
@@ -16,6 +16,6 @@ class BookingController extends BaseController
 
     public function set_request()
     {
-        return UpdateBookingRequest::class;
+        return BookingRequest::class;
     }
 }

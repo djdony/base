@@ -31,8 +31,8 @@
 <!-- Image Upload Field -->
 <div class="form-group col-sm-12 col-lg-12">
     <label for="images">{{ __('models/cars.fields.image')}}</label>
-    @if(isset($car))
-    @foreach($car->images as $image)
+    @if(isset($data))
+    @foreach($data->images as $image)
             <img src="{{ asset('images/thumbs/'.$image->url) }}" alt="{{$image->url}}">
             <a id="deleteImage" class="btn btn-sm btn-outline-danger py-0" data-id="{{ $image->id }}" >Delete</a>
     @endforeach

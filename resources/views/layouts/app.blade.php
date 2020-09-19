@@ -21,8 +21,6 @@
         crossorigin="anonymous">
     </script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">
@@ -43,38 +41,29 @@
                 <span class="badge badge-pill badge-danger">5</span>
             </a>
         </li>
-{{--        <li class="nav-item dropdown">--}}
-{{--            <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"--}}
-{{--               aria-haspopup="true" aria-expanded="false">--}}
-{{--                {{ Auth::user()->name }}--}}
-{{--            </a>--}}
-{{--            <div class="dropdown-menu dropdown-menu-right">--}}
-{{--                <div class="dropdown-header text-center">--}}
-{{--                    <strong>Account</strong>--}}
-{{--                </div>--}}
-{{--                <a class="dropdown-item" href="#">--}}
-{{--                    <i class="fa fa-envelope-o"></i> @lang('auth.app.messages')--}}
-{{--                    <span class="badge badge-success">42</span>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown-header text-center">--}}
-{{--                    <strong>@lang('auth.app.settings')</strong>--}}
-{{--                </div>--}}
-{{--                <a class="dropdown-item" href="#">--}}
-{{--                    <i class="fa fa-user"></i> @lang('auth.app.profile')</a>--}}
-{{--                <a class="dropdown-item" href="#">--}}
-{{--                    <i class="fa fa-wrench"></i> @lang('auth.app.settings')</a>--}}
-{{--                <div class="dropdown-divider"></div>--}}
-{{--                <a class="dropdown-item" href="#">--}}
-{{--                    <i class="fa fa-shield"></i> @lang('auth.app.lock_account')</a>--}}
-{{--                <a class="dropdown-item" href="{{ url('/logout') }}" class="btn btn-default btn-flat"--}}
-{{--                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">--}}
-{{--                    <i class="fa fa-lock"></i>@lang('auth.sign_out')--}}
-{{--                </a>--}}
-{{--                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">--}}
-{{--                    @csrf--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </li>--}}
+        <li class="nav-item dropdown">
+            <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
+               aria-haspopup="true" aria-expanded="false">
+                {{ Auth::user()->name }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>@lang('auth.app.settings')</strong>
+                </div>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user"></i> @lang('auth.app.profile')</a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-wrench"></i> @lang('auth.app.settings')</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url('/logout') }}" class="btn btn-default btn-flat"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-lock"></i>@lang('auth.sign_out')
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </li>
     </ul>
 </header>
 

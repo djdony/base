@@ -5,55 +5,12 @@ use Laravel\Fortify\Features;
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Fortify Guard
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify which authentication guard Fortify will use while
-    | authenticating users. This value should correspond with one of your
-    | guards that is already present in your "auth" configuration file.
-    |
-    */
-
     'guard' => 'web',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Fortify Password Broker
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify which password broker Fortify can use when a user
-    | is resetting their password. This configured value should match one
-    | of your password brokers setup in your "auth" configuration file.
-    |
-    */
 
     'passwords' => 'users',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Username
-    |--------------------------------------------------------------------------
-    |
-    | This value defines which model attribute should be considered as your
-    | application's "username" field. Typically, this might be the email
-    | address of the users but you are free to change this value here.
-    |
-    */
-
     'username' => 'email',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Home Path
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the path where users will get redirected during
-    | authentication or password reset when the operations are successful
-    | and the user is authenticated. You are free to change this value.
-    |
-    */
 
     'home' => RouteServiceProvider::HOME,
 

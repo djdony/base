@@ -11,11 +11,11 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($data as $location)
+        @foreach($locations as $location)
             <tr>
                 <td>{{ $location->name }}</td>
             <td>{{ $location->code }}</td>
-                <td>{{ $location->parent->name }}</td>
+                <td>{{ $location->parent->name ?? '-' }}</td>
                 <td>{{ $location->lat }}</td>
             <td>{{ $location->lon }}</td>
                 <td>

@@ -14,6 +14,8 @@ return array (
     'name' => 'Name',
     'type' => 'Type',
     'code' => 'Code',
+      'from' => 'From',
+      'to' => 'To',
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',
   ),

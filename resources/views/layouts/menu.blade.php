@@ -11,7 +11,12 @@
     </a>
 </li>
 
-
+<li class="nav-item {{ Request::is('admin/currencies*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.currencies.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>@lang('models/currencies.plural')</span>
+    </a>
+</li>
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#">
         <i class="nav-icon icon-disc"></i> @lang('models/cars.plural')
@@ -74,6 +79,12 @@
     <a class="nav-link" href="{{ route('admin.customers.index') }}">
         <i class="nav-icon icon-user"></i>
         <span>@lang('models/customers.plural')</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('admin/users*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.users.index') }}">
+        <i class="nav-icon icon-user"></i>
+        <span>@lang('models/users.plural')</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('admin/bookings*') ? 'active' : '' }}">

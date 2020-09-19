@@ -26,6 +26,13 @@ class LocationRequest extends FormRequest
     public function rules() {
         return [
             'name' => 'required',
+            'type' => 'required',
+            'code' => '',
+            'lat' => '',
+            'lon' => '',
+            'parent_id' => '',
+            '_lft' => '',
+            '_rgt' => '',
         ];
     }
 

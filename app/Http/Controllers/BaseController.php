@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Laracasts\Flash\Flash;
 use Illuminate\Container\Container;
 
@@ -27,7 +29,6 @@ abstract class BaseController extends Controller
     abstract public function set_model();
     abstract public function set_request();
 
-
     public function index()
     {
         $data = $this->model->all();
@@ -47,7 +48,13 @@ abstract class BaseController extends Controller
     public function store()
     {
         $request = $this->app->make($this->set_request());
-        $this->model->create($request->validated());
+        $model = $this->model->create($request->validated());
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $this->storeImage($image,200);
+                $model->images()->create(['url' => $image->getClientOriginalName()]);
+            }
+        }
 
         Flash::success(__('messages.saved', ['model' => __('models/'.$this->name.'.singular')]));
 
@@ -79,6 +86,12 @@ abstract class BaseController extends Controller
         $request = $this->app->make($this->set_request());
         $model = $this->model->findOrFail($id);
         $model->update($request->validated());
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $this->storeImage($image,200);
+                $model->images()->create(['url' => $image->getClientOriginalName()]);
+            }
+        }
         Flash::success(__('messages.updated', ['model' => __('models/'.$this->name.'.singular')]));
 
         return redirect(route('admin.'.$this->name.'.index'));
@@ -86,6 +99,20 @@ abstract class BaseController extends Controller
 
     public function destroy($id)
     {
-        //
+        $this->model->find($id)->delete();
+        return back();
+    }
+
+    protected function storeImage($image, $resize = null){
+        $name = $image->getClientOriginalName();
+        $path = $image->storeAs('images',$name, 'local');
+        $save_path = public_path().'/images/thumbs/';
+        if ($resize){
+            Image::make($image)
+                ->resize(null,$resize,function ($constraint){
+                    $constraint->aspectRatio();
+                })
+                ->save($save_path.$name);
+        }
     }
 }

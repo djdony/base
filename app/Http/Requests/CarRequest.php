@@ -25,7 +25,7 @@ class CarRequest extends FormRequest
      */
     public function rules() {
         $rules = [
-            'name' => 'required|unique:cars',
+            'name'=>'required|unique:cars,name,NULL,id,deleted_at,NULL',
             'car_type_id' => 'required',
             'max_pax' => 'required',
             'images.*' => '',
@@ -34,7 +34,7 @@ class CarRequest extends FormRequest
         if ($this->route('car')){
             $rules['name'] = [
                 'required',
-                Rule::unique('cars')->ignore($this->route('car'))];
+                Rule::unique('cars')->ignore($this->route('car'))->whereNull('deleted_at')];
         }
         return $rules;
 

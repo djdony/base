@@ -3,7 +3,7 @@
 return array (
   'singular' => 'Booking',
   'plural' => 'Bookings',
-  'fields' => 
+  'fields' =>
   array (
     'id' => 'Id',
     'from' => 'From',
@@ -14,6 +14,10 @@ return array (
     'type' => 'Type',
     'customer_id' => 'Customer Id',
     'info' => 'Info',
+    'price' => 'Price',
+    'currency' => 'Currency',
+    'customer' => 'Customer',
+    'partner' => 'Partner',
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',
   ),

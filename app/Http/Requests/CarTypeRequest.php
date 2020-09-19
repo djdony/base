@@ -29,12 +29,14 @@ class CarTypeRequest extends FormRequest
             return [
                 'name' => [
                     'required',
-                    Rule::unique('car_types')->ignore($this->route('car_type'))
+                    Rule::unique('car_types')
+                        ->ignore($this->route('car_type'))
+                        ->whereNull('deleted_at')
                 ]
             ];
         }
         return [
-            'name' => 'required|unique:car_types'
+            'name'=>'required|unique:car_types,name,NULL,id,deleted_at,NULL',
         ];
     }
 }
