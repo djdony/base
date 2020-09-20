@@ -6,11 +6,8 @@
 
 @section('content')
     @include('partials.header')
-
-
-    @livewire('search-price')
-
-        @livewireScripts
+    @include('partials.accordion')
+    <hr />
     @include('partials.footer')
 @endsection
 

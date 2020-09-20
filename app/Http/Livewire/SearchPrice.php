@@ -9,6 +9,11 @@ class SearchPrice extends Component
 {
     public $cars;
 
+    public function show(): bool
+    {
+        return true;
+    }
+
     public function render()
     {
         $this->cars = Car::all();

@@ -29,8 +29,8 @@ class Location extends Model
     const COUNTRY = 1;
     const REGION = 2;
     const CITY = 3;
-    const AIRPORT = 4;
-    const SUBREGION = 5;
+    const SUBREGION = 4;
+    const POINT = 5;
     /**
      * The attributes that should be casted to native types.
      *

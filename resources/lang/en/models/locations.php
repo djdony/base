@@ -7,6 +7,8 @@ return array (
   'cities' => 'Cities',
   'subregions' => 'SubRegions',
   'airports' => 'Airports',
+  'hotels' => 'Hotels',
+  'points' => 'Points',
   'fields' =>
   array (
     'parent' => 'Parent',

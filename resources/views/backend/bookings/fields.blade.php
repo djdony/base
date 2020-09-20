@@ -64,6 +64,12 @@
     {!! Form::text('flight', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Pax Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('pax', __('models/bookings.fields.pax').':') !!}
+    {!! Form::text('pax', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Type Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('type', __('models/bookings.fields.type').':') !!}

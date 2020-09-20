@@ -13,7 +13,7 @@
 
 <li class="nav-item {{ Request::is('admin/currencies*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.currencies.index') }}">
-        <i class="nav-icon icon-cursor"></i>
+        <i class="nav-icon icon-wallet"></i>
         <span>@lang('models/currencies.plural')</span>
     </a>
 </li>
@@ -55,14 +55,14 @@
         </li>
         <li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.locations.index') }}?type=4">
-                <i class="nav-icon icon-plane"></i>
-                <span>@lang('models/locations.airports')</span>
+                <i class="nav-icon icon-tag"></i>
+                <span>@lang('models/locations.subregions')</span>
             </a>
         </li>
         <li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.locations.index') }}?type=5">
                 <i class="nav-icon icon-location-pin"></i>
-                <span>@lang('models/locations.subregions')</span>
+                <span>@lang('models/locations.points')</span>
             </a>
         </li>
     </ul>
@@ -83,13 +83,13 @@
 </li>
 <li class="nav-item {{ Request::is('admin/users*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.users.index') }}">
-        <i class="nav-icon icon-user"></i>
+        <i class="nav-icon icon-share"></i>
         <span>@lang('models/users.plural')</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('admin/bookings*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.bookings.index') }}">
-        <i class="nav-icon icon-cursor"></i>
+        <i class="nav-icon icon-notebook"></i>
         <span>@lang('models/bookings.plural')</span>
     </a>
 </li>

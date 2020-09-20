@@ -34,6 +34,8 @@ class BookingRequest extends FormRequest
             'price' => '',
             'currency_id' => '',
             'customer_id' => 'required',
+            'pax' => 'nullable|integer',
+            'status' => '',
     ];
     }
 }

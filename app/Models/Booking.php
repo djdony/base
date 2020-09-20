@@ -14,6 +14,10 @@ class Booking extends Model
 
     protected $dates = ['deleted_at'];
 
+    const NEW = 1;
+    const CONFIRMED = 2;
+    const CANCELLED = 3;
+
     public $fillable = [
         'from_id',
         'to_id',
@@ -24,7 +28,9 @@ class Booking extends Model
         'currency_id',
         'price',
         'user_id',
-        'info'
+        'info',
+        'status',
+        'pax'
     ];
 
     /**

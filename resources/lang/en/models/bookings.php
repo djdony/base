@@ -18,6 +18,8 @@ return array (
     'currency' => 'Currency',
     'customer' => 'Customer',
     'partner' => 'Partner',
+    'pax' => 'Pax',
+    'status' => 'Status',
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',
   ),

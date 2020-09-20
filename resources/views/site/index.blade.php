@@ -8,6 +8,7 @@
 @include('partials.header')
 @include('partials.hero')
 @include('partials.search')
+@livewire('search-price')
 @include('partials.how')
 @include('partials.about')
 @include('partials.auto')

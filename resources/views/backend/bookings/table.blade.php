@@ -8,7 +8,9 @@
         <th>@lang('models/bookings.fields.date')</th>
         <th>@lang('models/bookings.fields.flight')</th>
         <th>@lang('models/bookings.fields.type')</th>
-        <th>@lang('models/bookings.fields.customer_id')</th>
+        <th>@lang('models/bookings.fields.pax')</th>
+        <th>@lang('models/bookings.fields.price')</th>
+        <th>@lang('models/bookings.fields.currency')</th>
         <th>@lang('models/bookings.fields.info')</th>
                 <th colspan="3">@lang('crud.action')</th>
             </tr>
@@ -22,6 +24,7 @@
             <td>{{ $booking->date ?? '' }}</td>
             <td>{{ $booking->flight ?? '' }}</td>
             <td>{{ $booking->type ?? '' }}</td>
+            <td>{{ $booking->pax ?? '' }}</td>
             <td>{{ $booking->price ?? '' }}</td>
             <td>{{ $booking->currency->name ?? '' }}</td>
             <td>{{ $booking->info ?? '' }}</td>

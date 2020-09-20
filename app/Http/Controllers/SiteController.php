@@ -19,10 +19,9 @@ class SiteController extends Controller
     }
 
     public function faq(){
-        $faqs = Faq::all();
-
+        $faqs = Faq::all()->sortBy('sort_order');
         return view('site.sss', [
-            'data' => $faqs,
+            'faqs' => $faqs,
         ]);
     }
 }
