@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [\App\Http\Controllers\SiteController::class, 'index']);
+Route::get('/sss', [\App\Http\Controllers\SiteController::class, 'faq']);
 Route::middleware(['auth:sanctum'])->prefix('admin')->group( function () {
     Route::get('/',function (){
         return view('dashboard');

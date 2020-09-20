@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero_text text-center">
-                    <h3>Добро пожаловать!</h3>
-                    <p>Заказ трансферa онлайн. Быстро и надежно</p>
+                    <h3>{{$data->title}}</h3>
+                    <p>{{$data->service_title}}</p>
                 </div>
             </div>
         </div>

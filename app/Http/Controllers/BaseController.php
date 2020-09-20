@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Laracasts\Flash\Flash;
 use Illuminate\Container\Container;

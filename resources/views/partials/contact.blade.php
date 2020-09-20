@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="contact-title">Отправьте сообшение</h2>
+            <h2 class="contact-title">{{$data->contact_title ?? ''}}</h2>
         </div>
         <div class="col-lg-8">
             <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
@@ -38,19 +38,19 @@
             <div class="media contact-info">
                 <span class="contact-info__icon"><i class="ti-home"></i></span>
                 <div class="media-body">
-                    <h3>Antalya Lara.</h3>
+                    <h3>{{$data->address ?? ''}}</h3>
                 </div>
             </div>
             <div class="media contact-info">
                 <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                 <div class="media-body">
-                    <h3>+90 533 498 10 34</h3>
+                    <h3>{{$data->phone ?? ''}}</h3>
                 </div>
             </div>
             <div class="media contact-info">
                 <span class="contact-info__icon"><i class="ti-email"></i></span>
                 <div class="media-body">
-                    <h3>Abdullaalioglu@gmail.com</h3>
+                    <h3>{{$data->email ?? ''}}</h3>
                     <p>Мы работаем 7/24!</p>
                 </div>
             </div>

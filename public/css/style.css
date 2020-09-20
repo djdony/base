@@ -843,7 +843,7 @@ h3 {
 }
 
 .where_togo_area .search_wrap .input_field {
-    width: 220px
+    width: 220px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

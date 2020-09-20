@@ -9,12 +9,12 @@
 <!-- From Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('location', __('models/locations.fields.from').':') !!}
-    {!! Form::select('from', $locations, $location->id ?? '', ['class' => 'form-control']) !!}
+    {!! Form::select('from_id', $locations, $location->id ?? '', ['class' => 'form-control']) !!}
 </div>
 <!-- To Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('location', __('models/locations.fields.to').':') !!}
-    {!! Form::select('to', $locations, $location->id ?? '', ['class' => 'form-control']) !!}
+    {!! Form::select('to_id', $locations, $location->id ?? '', ['class' => 'form-control']) !!}
 </div>
 @endisset
 

@@ -9,20 +9,19 @@
             </div>
             <div class="col-lg-9">
                 <div class="search_wrap">
-                    <form class="search_form" action="#">
-                        <div class="input_field">
-                            <input type="text" placeholder="Откуда?">
-                        </div>
-                        <div class="input_field">
-                            <input type="text" placeholder="Куда?">
-                        </div>
-                        <div class="input_field">
-                            <input id="datepicker" placeholder="Дата">
-                        </div>
-                        <div class="search_btn">
-                            <button class="boxed-btn4 " type="submit" >Поиск</button>
-                        </div>
-                    </form>
+                    {!! Form::open(['url' => 'foo/bar', 'class'=>'search_form']) !!}
+                    @isset($locations)
+                        {!! Form::select('from', $locations, null, ['placeholder' => 'Откуда', 'class' => 'input_field']) !!}
+                        {!! Form::select('from', $locations, null, ['placeholder' => 'Куда', 'class' => 'input_field']) !!}
+                    @endisset
+                    <div class="input_field">
+                        <input id="datepicker" placeholder="Дата">
+                    </div>
+                    <div class="search_btn">
+                        <button class="boxed-btn4 " type="submit" >Поиск</button>
+                    </div>
+                    {!! Form::close() !!}
+
                 </div>
             </div>
         </div>
